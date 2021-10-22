@@ -1,0 +1,30 @@
+syntax="proto3";
+
+package app;
+
+service AppController{
+    rpc Add (NumberArray) returns (SumOfNumberArray);
+    rpc Difference (NumberArray) returns (DifferenceOfNumberArray); 
+    rpc Multiply (NumberArray) returns (MultiplyOfNumberArray);
+    rpc Divide (NumberArray) returns (DivideOfNumberArray);
+}
+// declare the types used for service controller input type and return type 
+message NumberArray{
+    repeated double data=1;
+}
+
+message SumOfNumberArray{
+    double sum=1;
+}
+
+message DifferenceOfNumberArray{
+    double difference=1;
+}
+
+message MultiplyOfNumberArray{
+    double multiply=1;
+}
+
+message DivideOfNumberArray{
+    double divide=1;
+}
